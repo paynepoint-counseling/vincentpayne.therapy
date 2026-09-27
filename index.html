@@ -3,242 +3,217 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F2EAD3">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111A14">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F8F6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121819">
 <meta name="color-scheme" content="light dark">
 <title>Vincent Payne, LAC</title>
 <meta name="description" content="Vincent Payne, Licensed Associate Counselor in Phoenix. Adults, teens and families.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Alegreya:ital,wght@0,400;0,500;1,400&family=Alegreya+Sans:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Figtree:wght@400;500;600&display=swap">
 <style>
   :root {
-    --ground: #F2EAD3;
-    --ground-2: #E9DDBC;
-    --ink: #1E2A1F;
-    --ink-2: #3F4B3C;
-    --ink-3: #6E7563;
-    --tunic: #245232;
-    --tunic-2: #173A22;
-    --gold: #B8891C;
-    --gold-hi: #E2B94A;
-    --rule: #D6C7A0;
-    --box: #14231A;
-    --box-ink: #F4EED9;
+    --ground: #F6F8F6;
+    --surface: #FFFFFF;
+    --ink: #1E2A2C;
+    --ink-2: #485658;
+    --ink-3: #7A8688;
+    --rule: #DFE5E2;
+    --blue: #3D5E86;
+    --blue-soft: #E3EAF3;
+    --leaf: #4E7A52;
+    --bloom: #C63F7E;
+    --on-blue: #FFFFFF;
     --todo-bg: #FFF1CC;
     --todo-ink: #7A5410;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       color-scheme: dark;
-      --ground: #111A14;
-      --ground-2: #18241B;
-      --ink: #EEE7D2;
-      --ink-2: #C3BEA9;
-      --ink-3: #8D8F7C;
-      --tunic: #7FC08E;
-      --tunic-2: #2C5A39;
-      --gold: #E2B94A;
-      --gold-hi: #F2D27A;
-      --rule: #2E3A2F;
-      --box: #0A120D;
-      --box-ink: #F4EED9;
+      --ground: #121819;
+      --surface: #192123;
+      --ink: #E6ECEA;
+      --ink-2: #B7C2C0;
+      --ink-3: #87938F;
+      --rule: #29333A;
+      --blue: #9DB8DD;
+      --blue-soft: #1E2B3A;
+      --leaf: #9CC5A0;
+      --bloom: #F07AAE;
+      --on-blue: #121819;
       --todo-bg: #3A2F12;
       --todo-ink: #F0CF7F;
     }
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
-    --ground: #111A14;
-    --ground-2: #18241B;
-    --ink: #EEE7D2;
-    --ink-2: #C3BEA9;
-    --ink-3: #8D8F7C;
-    --tunic: #7FC08E;
-    --tunic-2: #2C5A39;
-    --gold: #E2B94A;
-    --gold-hi: #F2D27A;
-    --rule: #2E3A2F;
-    --box: #0A120D;
-    --box-ink: #F4EED9;
+    --ground: #121819;
+    --surface: #192123;
+    --ink: #E6ECEA;
+    --ink-2: #B7C2C0;
+    --ink-3: #87938F;
+    --rule: #29333A;
+    --blue: #9DB8DD;
+    --blue-soft: #1E2B3A;
+    --leaf: #9CC5A0;
+    --bloom: #F07AAE;
+    --on-blue: #121819;
     --todo-bg: #3A2F12;
     --todo-ink: #F0CF7F;
   }
 
+  html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
   body {
     background: var(--ground);
     color: var(--ink);
-    font-family: Alegreya, Georgia, serif;
-    font-size: 19px;
-    line-height: 1.62;
+    font-family: Figtree, "Helvetica Neue", Arial, sans-serif;
+    font-size: 18.5px;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--tunic); }
-  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  a { color: var(--blue); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
 
   .page {
-    max-width: 980px;
-    margin: 0 auto;
-    padding-inline: 20px;
-    padding-block: 40px 56px;
-    display: flex;
-    flex-direction: column;
-    gap: 72px;
+    max-width: 1040px; margin: 0 auto;
+    padding-inline: 20px; padding-block: 36px 56px;
+    display: flex; flex-direction: column; gap: 104px;
   }
 
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--ink-3); }
+  .top b { color: var(--ink); font-weight: 600; font-size: 16px; }
 
-  /* hero */
-  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
-  .hero-text { display: flex; flex-direction: column; gap: 22px; }
-  .eyebrow {
-    font-family: "Alegreya Sans", sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
-    color: var(--tunic); display: flex; align-items: center; gap: 10px;
-  }
+  .hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+  .photo { margin: 0; }
+  .photo img { display: block; width: 100%; height: auto; aspect-ratio: 752 / 720; object-fit: cover; border-radius: 18px; box-shadow: 0 1px 2px rgba(30,42,44,.06), 0 24px 48px -28px rgba(30,42,44,.35); }
+  .hero-text { display: flex; flex-direction: column; gap: 28px; }
   h1 {
-    font-family: Cinzel, "Trajan Pro", Georgia, serif; font-weight: 600;
-    font-size: clamp(34px, 5.6vw, 56px); line-height: 1.04; letter-spacing: .02em;
-    margin: 0; color: var(--ink);
+    font-family: Newsreader, Georgia, serif; font-weight: 400;
+    font-size: clamp(34px, 4.6vw, 52px); line-height: 1.12; letter-spacing: -.012em;
+    margin: 0; text-wrap: balance; max-width: 18ch;
   }
-  h1 span { display: block; font-family: "Alegreya Sans", sans-serif; font-size: 16px; font-weight: 500; letter-spacing: .02em; color: var(--ink-3); margin-top: 10px; }
-  .lead { font-size: clamp(22px, 2.7vw, 27px); line-height: 1.35; color: var(--ink); margin: 0; max-width: 30ch; text-wrap: balance; font-style: italic; }
-  .lead em { font-style: italic; color: var(--tunic); }
+  h1 em { font-style: italic; color: var(--blue); }
+  .who { margin: 0; color: var(--ink-2); font-size: 17px; }
+  .who b { color: var(--ink); font-weight: 600; }
 
   .cta { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    padding: 12px 20px; border-radius: 4px;
-    font-family: "Alegreya Sans", sans-serif; font-weight: 700; font-size: 15.5px; letter-spacing: .03em; text-decoration: none;
-    border: 2px solid var(--tunic); color: var(--tunic); background: transparent;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 13px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 16px; text-decoration: none;
+    border: 1.5px solid var(--blue); color: var(--blue); background: transparent;
+    touch-action: manipulation; user-select: none; -webkit-user-select: none;
+    transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease-out;
   }
-  .btn.primary { background: var(--tunic-2); border-color: var(--gold); color: #F4EED9; box-shadow: inset 0 0 0 2px var(--tunic-2), inset 0 0 0 3px var(--gold-hi); }
-  html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
-  .btn, .phone { touch-action: manipulation; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), filter 160ms ease-out; }
-  .btn { user-select: none; -webkit-user-select: none; }
-  .btn:active, .phone:active { transform: scale(0.97); }
-  .phone { display: inline-block; }
+  .btn.primary { background: var(--blue); color: var(--on-blue); }
+  .btn:active { transform: scale(0.97); }
   @media (hover: hover) and (pointer: fine) {
-    .btn:hover { filter: brightness(1.1); }
+    .btn:hover { background: var(--blue-soft); }
+    .btn.primary:hover { background: var(--blue); filter: brightness(1.08); }
   }
+
+  .col { max-width: 640px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; gap: 24px; }
+  h2 { font-family: Newsreader, Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.2; letter-spacing: -.01em; margin: 0; }
+  p { margin: 0; color: var(--ink-2); }
+  .prose { display: flex; flex-direction: column; gap: 24px; }
+  .prose > p:first-child { color: var(--ink); font-size: 20px; }
+
+  .pull { margin: 20px 0; padding: 0; }
+  .pull p {
+    font-family: Newsreader, Georgia, serif; font-style: italic;
+    font-size: clamp(26px, 3.4vw, 34px); line-height: 1.3; color: var(--ink);
+    text-wrap: balance; max-width: 22ch;
+  }
+  .pull::before { content: ""; display: block; width: 40px; height: 3px; border-radius: 2px; background: var(--bloom); margin-bottom: 18px; }
+
+  .facts { margin: 0; display: grid; grid-template-columns: 150px 1fr; border-top: 1px solid var(--rule); }
+  .facts dt, .facts dd { margin: 0; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .facts dt { font-size: 14px; font-weight: 600; color: var(--leaf); letter-spacing: .02em; }
+  .facts dd { color: var(--ink); }
+
+  .reach { text-align: center; align-items: center; }
+  .reach p { max-width: 44ch; }
+  .phone {
+    font-family: Newsreader, Georgia, serif; font-size: clamp(34px, 5vw, 46px); letter-spacing: -.01em;
+    color: var(--ink); text-decoration: none; font-variant-numeric: tabular-nums;
+    display: inline-block; touch-action: manipulation;
+    transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .phone:active { transform: scale(0.97); }
+  .reach .cta { justify-content: center; }
+  .place { font-size: 16px; color: var(--ink-3); line-height: 1.6; }
+  .place a { color: var(--ink-2); }
+  .todo { background: var(--todo-bg); color: var(--todo-ink); font-size: 14px; padding: 2px 8px; border-radius: 4px; }
+
   @media (prefers-reduced-motion: reduce) {
-    .btn, .phone { transition: filter 160ms ease-out; }
-    .btn:active, .phone:active { transform: none; filter: brightness(0.92); }
+    .btn, .phone { transition: none; }
+    .btn:active, .phone:active { transform: none; opacity: .85; }
   }
 
-  .portrait { position: relative; justify-self: center; width: min(100%, 400px); padding: 8px; border: 3px solid var(--gold); border-radius: 4px; background: var(--tunic-2); box-shadow: inset 0 0 0 1px var(--gold-hi), 0 0 0 5px var(--ground), 0 0 0 6px var(--gold); }
-  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 752 / 720; object-fit: cover; border-radius: 1px; outline: 1px solid var(--gold-hi); }
-
-  /* body */
-  section { display: flex; flex-direction: column; gap: 18px; }
-  h2 { font-family: Cinzel, Georgia, serif; font-weight: 600; font-size: 24px; letter-spacing: .04em; line-height: 1.2; margin: 0; color: var(--ink); }
-  p { margin: 0; color: var(--ink-2); max-width: 64ch; }
-
-  .story { display: grid; grid-template-columns: 180px 1fr; gap: 40px; }
-  .story aside { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; display: flex; flex-direction: column; gap: 10px; }
-  .prose { display: flex; flex-direction: column; gap: 20px; max-width: 640px; }
-  .prose p { max-width: none; }
-  .prose p:first-child { font-size: 21px; color: var(--ink); }
-
-  .textbox {
-    margin: 14px 0; position: relative;
-    background: var(--box); color: var(--box-ink);
-    border: 3px solid var(--gold); border-radius: 10px;
-    box-shadow: inset 0 0 0 3px var(--box), inset 0 0 0 4px var(--gold-hi);
-    padding: 24px 28px 30px;
-    font-size: clamp(21px, 2.8vw, 26px); line-height: 1.4; text-wrap: balance;
-  }
-  .prose .textbox p { color: var(--box-ink); max-width: none; font-size: inherit; }
-  .textbox .more { position: absolute; right: 18px; bottom: 10px; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 10px solid var(--gold-hi); animation: bob 1.2s ease-in-out infinite; }
-  @keyframes bob { 50% { transform: translateY(4px); } }
-  @media (prefers-reduced-motion: reduce) { .textbox .more { animation: none; } }
-
-  .glance {
-    border: 2px solid var(--rule); border-radius: 8px; padding: 28px 30px;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px 36px;
-    background: var(--ground-2);
-  }
-  .glance div { display: flex; flex-direction: column; gap: 4px; }
-  .glance .k { font-family: "Alegreya Sans", sans-serif; font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--tunic); display: flex; align-items: center; gap: 8px; }
-  .glance .v { color: var(--ink); }
-
-  .reach { border-top: 1px solid var(--rule); padding-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-  .phone { font-family: Cinzel, Georgia, serif; font-weight: 600; font-size: clamp(30px, 4.6vw, 42px); color: var(--ink); text-decoration: none; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
-  .reach-list { display: flex; flex-direction: column; gap: 10px; color: var(--ink-2); }
-  .reach-list b { color: var(--ink); font-weight: 500; }
-  .todo { background: var(--todo-bg); color: var(--todo-ink); font-size: 15px; padding: 2px 8px; border-radius: 4px; }
-
-  footer { font-family: "Alegreya Sans", sans-serif; font-size: 14.5px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  footer { border-top: 1px solid var(--rule); padding-top: 22px; flex-direction: column; gap: 10px; }
-  footer p { color: var(--ink-3); }
-  footer .legal { max-width: 72ch; font-size: 14px; line-height: 1.55; }
-  footer .sig { margin-top: 6px; }
+  footer { border-top: 1px solid var(--rule); padding-top: 24px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.6; }
+  footer p { color: var(--ink-3); max-width: 72ch; }
 
   @media (max-width: 760px) {
-    .page { gap: 56px; padding-block: 28px 44px; }
-    .hero { grid-template-columns: 1fr; gap: 36px; }
-    .portrait { order: -1; width: min(78%, 300px); }
-    .story { grid-template-columns: 1fr; gap: 16px; }
-    .story aside { position: static; }
-    .reach { grid-template-columns: 1fr; }
+    .page { gap: 72px; padding-block: 24px 44px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; }
     .btn { flex: 1 1 100%; }
+    .facts { grid-template-columns: 1fr; }
+    .facts dt { border-bottom: 0; padding-bottom: 0; }
+    .facts dd { padding-top: 4px; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
+  <div class="top"><b>Vincent Payne, LAC</b><span>Counseling in Phoenix</span></div>
+
   <header class="hero">
+    <figure class="photo">
+      <img src="headshot.jpg" alt="Vincent Payne smiling in front of a bougainvillea hedge" width="752" height="720">
+    </figure>
     <div class="hero-text">
-      <div class="eyebrow">
-        
-        Counseling in Phoenix
-      </div>
-      <h1>Vincent Payne<span>Licensed Associate Counselor &middot; adults, teens and families</span></h1>
-      <p class="lead">Feeling misunderstood by the people closest to you <em>can be lonely.</em></p>
+      <h1>Feeling misunderstood by the people closest to you <em>can be lonely.</em></h1>
+      <p class="who"><b>Vincent Payne</b>, Licensed Associate Counselor. Adults, teens and families.</p>
       <div class="cta">
         <a class="btn primary" href="tel:+16029320207">Call 602-932-0207</a>
         <a class="btn" href="https://therosemarytree.org/contact">Book an appointment</a>
       </div>
     </div>
-    <div class="portrait">
-      <img src="headshot.jpg" alt="Vincent Payne smiling in front of a bougainvillea hedge" width="752" height="720">
-    </div>
   </header>
 
-  <section class="story">
-    <aside><h2>About me</h2></aside>
+  <section class="col" aria-labelledby="about">
+    <h2 id="about">About me</h2>
     <div class="prose">
       <p>You may find yourself having the same arguments, keeping your feelings to yourself, or wanting things to change without knowing where to start. Or you may have worked hard to build a successful career and the life you thought would make you happy, only to find that something still feels missing. It can be hard to talk about feeling empty when, from the outside, things seem to be going well. I work with adults, teens, and families to explore what they&rsquo;re experiencing and what they&rsquo;d like to change.</p>
       <p>With so much information and technology available, you may have already spent a lot of time trying to figure things out. But understanding a problem doesn&rsquo;t always change how it feels. Sometimes, you may not even have words for what you&rsquo;re experiencing. We can use creative ways to explore those feelings and notice patterns together.</p>
-      <div class="textbox"><p>You don&rsquo;t have to explain everything perfectly to be heard.</p><span class="more" aria-hidden="true"></span></div>
+      <blockquote class="pull"><p>You don&rsquo;t have to explain everything perfectly to be heard.</p></blockquote>
       <p>I know firsthand what it&rsquo;s like to grow up in a family where safety, stability, and trust were often missing. I also understand how faith can become tangled with guilt, shame, and blame. For a long time, I carried that tension wherever I went. I found comfort and distraction in video games, Japanese anime, food, and time spent on screens. I also put a lot of energy into performing well and trying to get everything right. Over sixteen years of working through my own personal challenges and trauma, I&rsquo;ve come to better understand what I needed and how I was trying to meet those needs. That experience shapes how I listen, while leaving room for your story to be different from mine.</p>
       <p>As a Licensed Associate Counselor, my style is supportive and direct. I&rsquo;ll take time to get to know you, offer guidance, and share what I notice. My work draws from Intuitive Experiential Therapy, Dialectical Behavior Therapy (DBT), Cognitive Behavioral Therapy (CBT), motivational interviewing, and psychodrama, with attention to emotions, the body, and how earlier experiences affect your life today.</p>
       <p>You don&rsquo;t need to have everything figured out or know exactly what to say. We can start with what&rsquo;s been difficult and what you&rsquo;d like help with.</p>
     </div>
   </section>
 
-  <section class="glance" aria-label="At a glance">
-    <div><span class="k">Who I see</span><span class="v">Adults, teens and families</span></div>
-    <div><span class="k">My style</span><span class="v">Supportive and direct</span></div>
-    <div><span class="k">How I work</span><span class="v">Intuitive Experiential Therapy, DBT, CBT, motivational interviewing, psychodrama</span></div>
+  <section class="col" aria-label="At a glance">
+    <dl class="facts">
+      <dt>Who I see</dt><dd>Adults, teens and families</dd>
+      <dt>My style</dt><dd>Supportive and direct</dd>
+      <dt>How I work</dt><dd>Intuitive Experiential Therapy, DBT, CBT, motivational interviewing, psychodrama</dd>
+    </dl>
   </section>
 
-  <section id="reach" class="reach">
-    <div>
-      <h2>Let&rsquo;s talk</h2>
-      <p style="margin-top:10px">Call to set up a time, or <a href="https://therosemarytree.org/contact">book an appointment online</a> and choose Vincent as your preferred provider.</p>
-      <p style="margin-top:14px"><a class="phone" href="tel:+16029320207">602-932-0207</a></p>
-    </div>
-    <div class="reach-list">
-      <p><a href="https://therosemarytree.org/contact"><b>The Rosemary Tree Therapy &amp; Wellness Center</b></a><br><a href="https://www.google.com/maps/search/?api=1&amp;query=1102+E+Missouri+Ave+Phoenix+AZ+85014">1102 E Missouri Ave<br>Phoenix, AZ 85014</a></p>
-      <p><a href="https://therosemarytree.org/contact">Request an appointment</a></p>
-      <p>Psychology Today: <span class="todo">add your profile link</span></p>
-    </div>
+  <section id="reach" class="col reach">
+    <h2>Let&rsquo;s talk</h2>
+    <p>Call to set up a time, or book online and choose Vincent as your preferred provider.</p>
+    <a class="phone" href="tel:+16029320207">602-932-0207</a>
+    <div class="cta"><a class="btn" href="https://therosemarytree.org/contact">Book an appointment</a></div>
+    <p class="place"><a href="https://therosemarytree.org/contact">The Rosemary Tree Therapy &amp; Wellness Center</a><br><a href="https://www.google.com/maps/search/?api=1&amp;query=1102+E+Missouri+Ave+Phoenix+AZ+85014">1102 E Missouri Ave, Phoenix, AZ 85014</a></p>
+    <p class="place">Psychology Today: <span class="todo">add your profile link</span></p>
   </section>
 
   <footer>
-    <p class="legal">Vincent Payne is a Licensed Associate Counselor (LAC) with the Arizona Board of Behavioral Health Examiners. He practices at The Rosemary Tree Therapy &amp; Wellness Center under the clinical supervision of Michelle Ellis, LMFT.</p>
-    <p class="legal">This site is for information and scheduling only. It is not therapy and is not monitored for emergencies. If you are in crisis, call or text 988, the Suicide and Crisis Lifeline, or call 911.</p>
-    <p class="sig">Vincent Payne, LAC &middot; Phoenix, Arizona</p>
+    <p>Vincent Payne is a Licensed Associate Counselor (LAC) with the Arizona Board of Behavioral Health Examiners. He practices at The Rosemary Tree Therapy &amp; Wellness Center under the clinical supervision of Michelle Ellis, LMFT.</p>
+    <p>This site is for information and scheduling only. It is not therapy and is not monitored for emergencies. If you are in crisis, call or text 988, the Suicide and Crisis Lifeline, or call 911.</p>
   </footer>
 
 </div>
