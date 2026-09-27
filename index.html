@@ -153,7 +153,10 @@
   .todo { background: var(--todo-bg); color: var(--todo-ink); font-size: 15px; padding: 2px 8px; border-radius: 4px; }
 
   footer { font-family: "Alegreya Sans", sans-serif; font-size: 14.5px; color: var(--ink-3); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer { border-top: 1px solid var(--rule); padding-top: 22px; flex-direction: column; gap: 10px; }
   footer p { color: var(--ink-3); }
+  footer .legal { max-width: 72ch; font-size: 14px; line-height: 1.55; }
+  footer .sig { margin-top: 6px; }
 
   @media (max-width: 760px) {
     .page { gap: 56px; padding-block: 28px 44px; }
@@ -212,15 +215,16 @@
       <p style="margin-top:14px"><a class="phone" href="tel:+16029320207">602-932-0207</a></p>
     </div>
     <div class="reach-list">
-      <p><b>The Rosemary Tree Therapy &amp; Wellness Center</b><br>Phoenix, AZ 85014</p>
+      <p><b>The Rosemary Tree Therapy &amp; Wellness Center</b><br><a href="https://www.google.com/maps/search/?api=1&amp;query=1102+E+Missouri+Ave+Phoenix+AZ+85014">1102 E Missouri Ave<br>Phoenix, AZ 85014</a></p>
       <p><a href="https://therosemarytree.org/therapists">therosemarytree.org/therapists</a></p>
       <p>Psychology Today: <span class="todo">add your profile link</span></p>
     </div>
   </section>
 
   <footer>
-    <p>If you are in crisis, call or text 988 any time.</p>
-    <p>Vincent Payne, LAC &middot; Phoenix, Arizona</p>
+    <p class="legal">Vincent Payne is a Licensed Associate Counselor (LAC) with the Arizona Board of Behavioral Health Examiners. He practices at The Rosemary Tree Therapy &amp; Wellness Center under the clinical supervision of Michelle Ellis, LMFT.</p>
+    <p class="legal">This site is for information and scheduling only. It is not therapy and is not monitored for emergencies. If you are in crisis, call or text 988, the Suicide and Crisis Lifeline, or call 911.</p>
+    <p class="sig">Vincent Payne, LAC &middot; Phoenix, Arizona</p>
   </footer>
 
 </div>
