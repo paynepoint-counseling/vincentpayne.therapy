@@ -6,7 +6,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F6F8F6">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121819">
 <meta name="color-scheme" content="light dark">
-<title>Vincent Payne, LAC</title>
+<title>Vincent Payne, MS, LAC</title>
 <meta name="description" content="Vincent Payne, Licensed Associate Counselor in Phoenix. Adults, teens and families.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,6 +81,8 @@
   }
 
   .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--ink-3); }
+  .top-phone { color: var(--ink-2); text-decoration: none; font-weight: 500; font-variant-numeric: tabular-nums; touch-action: manipulation; }
+  @media (hover: hover) and (pointer: fine) { .top-phone:hover { color: var(--blue); } }
   .top b { color: var(--ink); font-weight: 600; font-size: 16px; }
 
   .hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
@@ -166,7 +168,7 @@
 <body>
 <div class="page">
 
-  <div class="top"><b>Vincent Payne, LAC</b><span>Counseling in Phoenix</span></div>
+  <div class="top"><b>Vincent Payne, MS, LAC</b><a class="top-phone" href="tel:+16029320207">602-932-0207</a></div>
 
   <header class="hero">
     <figure class="photo">
@@ -174,7 +176,7 @@
     </figure>
     <div class="hero-text">
       <h1>Feeling misunderstood by the people closest to you <em>can be lonely.</em></h1>
-      <p class="who"><b>Vincent Payne</b>, Licensed Associate Counselor. Adults, teens and families.</p>
+      <p class="who"><b>Vincent Payne, MS</b>, Licensed Associate Counselor. Adults, teens and families.</p>
       <div class="cta">
         <a class="btn primary" href="tel:+16029320207">Call 602-932-0207</a>
         <a class="btn" href="https://therosemarytree.org/contact">Book an appointment</a>
